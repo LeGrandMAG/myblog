@@ -1,0 +1,38 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Blog | {{title}}
+{% endblock %}
+
+{%block body%}
+<div> 
+  <div>
+
+    {% if entry%}
+    <!--<h1>{{title}}</h1>-->
+    {{entry|safe}}
+    {%else%}
+    Sorry, This page does not exit sorry
+    {%endif%}
+    
+    <form action = "{%url 'delete' pk=title%}" method="post" style="margin:auto; width:100%;">
+      {%csrf_token%}
+      <div class="div-center" style="width:100%; padding-top:1rem;">
+        <a class="bbt rd ppd" style="text-decoration:none; color:black; font-size: 15px;" href="{% url 'edit' pk=title%}">Edit</a>
+        <input id ="delete" type="submit" name="submit" value="Delete"/>
+      </div>
+      
+    </form>
+    
+    
+  </div>
+</div>
+<script>
+  let p = document.getElementById('delete')
+  p.addEventListener('click', myname)
+
+  function myname(){
+    alert("are you sure you want to delete?")
+  }
+</script>
+{% endblock body%}

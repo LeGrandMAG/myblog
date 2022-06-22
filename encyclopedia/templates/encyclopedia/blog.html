@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki50
+{% endblock %}
+
+{% block body %}
+    <h1>All my posts</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'detail' pk=entry %}">{{entry}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

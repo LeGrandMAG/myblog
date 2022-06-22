@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta property="og:type" content="blog" />
+
+    <meta property="og:title" content="Mag's world | A dive into the life of a Congolese lost in South Korea" />
+
+    <meta property="og:description" content="Check out the life of a Congolese student lost in South Korea" />
+
+    <meta property="og:image" content="/assets/img/my_head.png" />
+
+    <meta property="og:url" content="https://magmukendi.com" />
+
+    <meta property="og:site_name" content="Mag Mukendi" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Check out the life of a Congolese student lost in South Korea">
+    <link rel="canonical" href="https://magmukendi.me">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="follow, index">
+    <script src="https://kit.fontawesome.com/cd3abaa76f.js" crossorigin="anonymous"></script>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/css/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'encyclopedia/css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'encyclopedia/css/media_queries.css' %}">
+    <link rel="shortcut icon" href="{% static 'encyclopedia/images/FAVICON-profile.ico'%}" type= "image/x-icon">
+    <link rel="stylesheet" href="{% static 'encyclopedia/css/navbar.css'%}">
+    <link rel="stylesheet" href="{% static 'encyclopedia/css/footer.css'%}">
+    
+    </head>
+    <body >
+        <header>
+                <nav>
+                    <div class="left">
+                        <a href="{%url 'home' %}"><img id="head-logo"src="{%static 'encyclopedia/images/my_head.png' %}" alt=""></a>
+                    </div>
+                    <div class='right'>
+                        <div class="right-list">
+                            <a href="{%url 'blog' %}">Blog</a>
+                            <a href="{%url 'blog' %}">Blog</a>
+                        </div>
+                    </div>
+                </nav>
+        </header>
+        <div class= "main-content">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <footer id="footer">
+            <!--<div class="footer-text">
+                <a href="">Term of usage</a>
+                <a href="">User's code of conduct</a>
+                <a href="mailto:magmukendi0@gmail.com">Send me an email</a> 
+            </div>
+            <p></p> -->
+            <div style=" display: flex; flex-direction: column; align-items: center;">
+
+                <h5>Contact me</h5>
+                
+                <div id="sns">
+                        <span>
+                            <a href="https://www.facebook.com/mag.mukendi">
+                            <i class="fa-brands fa-facebook fa-xl">  </i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="https://twitter.com/MAGMukendi">
+                            <i class="fa-brands fa-twitter fa-xl"> </i>
+                        </a>
+                    </span>
+                    
+                    <span>
+                        <a href="https://www.instagram.com/mag.legrand/">
+                            <i class="fa-brands fa-instagram fa-xl"> </i>
+                        </a>
+                    </span>
+                    
+                    <span>
+                        <a href="https://www.linkedin.com/in/magmukendi/">
+                            
+                            <i class="fa-brands fa-linkedin fa-xl"> </i>
+                        </a>
+                    </span>
+                    
+                    <span>
+                        <a href="mailto:magmukendi0@gmail.com">
+                            
+                            <i class="fa-brands fa-google fa-xl"> </i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <p>Copyright Mag Mukendi 2022</p>
+        </footer>
+    </body>
+</html>
