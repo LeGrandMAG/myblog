@@ -49,7 +49,7 @@ LOGGING = {
     }
 }
 
-#okay
+#this is th hardest part
 STATIC_URL = 'static/'
 STATICFILES_DIRS =  [ BASE_DIR / "static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'live-static')
@@ -66,3 +66,5 @@ SECURE_SSL_REDIRECT = True
 CSRF_COOKIE_SECURE = True
 
 """Hello world"""
+
+love= "i love you"
