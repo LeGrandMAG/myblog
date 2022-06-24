@@ -71,8 +71,9 @@ span a:hover{
 
 .poto{
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 
 }
-
-span
+span{
+    margin: 0px;
+}

@@ -91,6 +91,9 @@ DATABASES = {
     }
 }
 
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("text/javascript", ".js", True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
