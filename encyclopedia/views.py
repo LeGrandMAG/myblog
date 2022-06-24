@@ -8,7 +8,9 @@ from markdown2 import Markdown
 
 
 def home(request):
-    return render(request, "encyclopedia/home.html")
+    txt =random.choice(util.list_entries())    
+
+    return render(request, "encyclopedia/home.html", {"random": txt})
 
 def blog(request):
     ##x = random.randrange(0,len(util.list_entries))
