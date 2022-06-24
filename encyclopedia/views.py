@@ -51,9 +51,10 @@ def entries(request, pk):
     el = Markdown()
     if (pk in util.list_entries()):
         e = el.convert(util.get_entry(pk))
+        cdate = util.get_time(pk)
     else:
         return redirect( 'notfound')
-    context = {"title":pk, "entry":e, "random":txt }
+    context = {"title":pk, "entry":e, "random":txt, "date":cdate }
     return render(request, "encyclopedia/entry.html", context)
 
 

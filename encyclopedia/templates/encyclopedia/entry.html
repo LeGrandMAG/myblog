@@ -12,6 +12,7 @@
       <!--<h1>{{title}}</h1>-->
     {% if entry%}
     {{entry|safe}}
+    <p style="font-size:12px;margin-top:1rem;"><i>{{date | timesince}} ago</i></p>
     {%else%}
     Sorry, This page does not exit sorry
     {%endif%}
@@ -19,7 +20,7 @@
     
     <form action = "{%url 'delete' pk=title%}" method="post" style="margin:auto; width:100%;">
       {%csrf_token%}
-      <div class="div-center" style="width:100%; padding-top:1rem;">
+      <div class="div-center" style="width:100%; padding-top:4rem;">
         <a class="bbt rd ppd" style="text-decoration:none; color:black; font-size: 15px;" href="{% url 'edit' pk=title%}">Edit</a>
         <input id ="delete" type="submit" name="submit" value="Delete"/>
       </div>
