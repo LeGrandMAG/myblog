@@ -32,14 +32,18 @@ body{
     display: flex;
     width: 100%;
     flex-direction:column;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 0.01rem;
+    padding-right: 0.01rem;
     align-items: center;
     background-color: white;
 }
 
 .main-content a{
     font-size: 12px;
+}
+
+h1{
+    font-size: 20px;
 }
 
 
