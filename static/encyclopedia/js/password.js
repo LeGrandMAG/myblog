@@ -23,17 +23,11 @@ function print(){
         console.log("The password is correct :)")
         child.style.color = "green"
         child.innerText = "The password is correct"
-        sub.disabled = true
+        sub.disabled = false
     }
     pp.appendChild(child)
 }
-function wipee(){
-    let t = document.getElementById('pw')
 
-    t.value=""
-    console.log(x.value + "Love")
-    console.table(listAll)
-}
 function listen(){
     x.addEventListener('keyup', go)
     x.addEventListener('keyup', print)
