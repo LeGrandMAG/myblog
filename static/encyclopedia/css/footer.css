@@ -23,6 +23,7 @@
     width: 100%;
     flex-direction: column;
     justify-content: center;
+    height: fit-content;
 
 
 }
@@ -41,15 +42,11 @@
     transition: 0.2s;
 }
 
-footer h5{
-    font-size: 12px;
-    margin-bottom: 0px;
-}
-
 #footer p{
     margin-top: 5px;
     font-size: 10px;
     text-align: center;
+    margin-bottom: 0px;
 }
 
 #sns{
@@ -59,12 +56,12 @@ footer h5{
     align-items: center;
 }
 #sns span{
-    margin: 0.3rem;
+    margin: 0.5rem;
     
     
 
 }
-#sns span a{
+span a{
     color: white;
 }
 span a:hover{
@@ -72,3 +69,10 @@ span a:hover{
 
 }
 
+.poto{
+    margin: auto;
+    margin-top: 1rem;
+
+}
+
+span

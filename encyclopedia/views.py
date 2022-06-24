@@ -75,6 +75,18 @@ def create(request):
         
     return render(request, "encyclopedia/create.html", {"random":txt})
 
+def password(request):
+    txt =random.choice(util.list_entries())    
+    passs = "Pourquoipasnous?@"
+    if (request.method == 'POST'):
+        if (request.POST.get('password') == passs):
+            return redirect ('create')
+            
+        else:
+            return redirect('home')
+        
+    return render(request, "encyclopedia/password.html", {"random":txt})
+    
 def empty(request):
     txt =random.choice(util.list_entries())
 

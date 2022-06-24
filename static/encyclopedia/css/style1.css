@@ -31,15 +31,17 @@ body{
     color: black;
     display: flex;
     width: 100%;
+    min-height: 10rem;
     flex-direction:column;
-    padding-left: 0.01rem;
-    padding-right: 0.01rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
     align-items: center;
     background-color: white;
+    font-size: 16px;
 }
 
 .main-content a{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 h1{
