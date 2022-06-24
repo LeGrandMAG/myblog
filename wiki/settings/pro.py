@@ -50,15 +50,18 @@ LOGGING = {
 }
 
 #this is th hardest part
-STATIC_URL = 'static/'
-STATICFILES_DIRS =  [ BASE_DIR / "static"]
+##STATICFILES_DIRS =  [ BASE_DIR / "static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'live-static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static', 'media-root')
+STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 DEBUG_PROPAGATE_EXCEPTIONS = True
 # Heroku settings
-#django_on_heroku.settings(locals(), staticfiles=False)
+django_on_heroku.settings(locals(), staticfiles=False)
 
 ##del DATABASES['default']['OPTIONS']['sslmode']
 
