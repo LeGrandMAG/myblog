@@ -1,14 +1,14 @@
 {% extends "encyclopedia/layout.html" %}
 
 {%block title%}
-Edit {{otitle}}
+Edit {{post.title}}
 {%endblock title%}
 {%block body%}
 <form action="" method="post" style="width:100%; margin:auto;">
     {%csrf_token%}
     <div>
         <h1 style=" text-align:justify; margin-bottom:20px">Edit you Wiki!</h1>
-        <textarea style= "width: 100%; margin-bottom: 25px; text-align:justify;" id="content" name="content"placeholder="Content here">{{oentry}}</textarea>
+        <textarea style= "width: 100%; margin-bottom: 25px; text-align:justify;" id="content" name="content"placeholder="Content here">{{post.content}}</textarea>
         <input type="submit" style="margin:auto; width: 100%;" name="submit" value="submit"/>
     </div>
 </form>

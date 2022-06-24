@@ -56,7 +56,7 @@ def get_entry(title):
         return None
 
 def get_time(title):
-   ko= os.path.getctime(f"entries/{title}.md")
+   ko= os.path.getmtime(f"entries/{title}.md")
    dt = datetime.fromtimestamp(ko)
    seoul = ZoneInfo('Asia/Seoul')
    seoultime=dt.replace(tzinfo=seoul)

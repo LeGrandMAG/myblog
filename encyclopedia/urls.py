@@ -13,5 +13,7 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("404/", views.notfound, name="notfound"),
     path('empty/', views.empty, name="empty"),
-    path('password/', views.password, name="password" )
+    path('password/', views.password, name="password" ),
+    path('post/<str:pk>', views.post, name="post" )
+
 ]

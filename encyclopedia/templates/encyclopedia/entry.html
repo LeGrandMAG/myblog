@@ -11,8 +11,10 @@
     <div class ='entry'>
       <!--<h1>{{title}}</h1>-->
     {% if entry%}
-    {{entry|safe}}
-    <p style="font-size:12px;margin-top:1rem;"><i>{{date | timesince}} ago</i></p>
+     
+         <h2> {{entry.title}} </h2>
+         {{content | safe}}    
+    <p style="font-size:12px;margin-top:1rem;"><i>{{entry.created | timesince}} ago</i></p>
     {%else%}
     Sorry, This page does not exit sorry
     {%endif%}

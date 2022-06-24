@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Blog | {{post.title}}
+{% endblock %}
+
+{%block body%}
+
+  <div class="container">
+
+    <div class ='entry'>    
+       <p> {{post.created}} </p>
+       <p> {{post | safe}} </p>    
+    </div>
+    
+    
+  </div>
+
+{% endblock body%}
