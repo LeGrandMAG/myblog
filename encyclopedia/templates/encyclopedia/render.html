@@ -1,0 +1,17 @@
+{%extends "encyclopedia/layout.html"%}
+{% block title %}
+Class Time
+{% endblock %}
+
+{% block body %}
+<h3> Check your class time</h3>
+<form method="post" action="">
+    {% csrf_token %}
+    <input style="text-align:center;"name="time" id="time"></input>
+</form>
+
+{%if time %}
+<p> Your class is at <b>{{time}}:00 </b></p>
+{%endif%}
+
+{% endblock %}

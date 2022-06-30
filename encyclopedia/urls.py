@@ -14,6 +14,8 @@ urlpatterns = [
     path("404/", views.notfound, name="notfound"),
     path('empty/', views.empty, name="empty"),
     path('password/', views.password, name="password" ),
-    path('post/<str:pk>', views.post, name="post" )
+    path('post/<str:pk>', views.post, name="post" ),
+    path("render/", views.renders, name="render"),
+
 
 ]
