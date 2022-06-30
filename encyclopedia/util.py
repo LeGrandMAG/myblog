@@ -2,7 +2,7 @@ import re
 import os
 from datetime import datetime, tzinfo 
 from zoneinfo import ZoneInfo
-
+import requests 
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
@@ -55,6 +55,7 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
+#get the time
 def get_time(title):
    ko= os.path.getmtime(f"entries/{title}.md")
    dt = datetime.fromtimestamp(ko)
@@ -76,3 +77,18 @@ def convert(title):
         
     except FileNotFoundError:
         return "nothing to say"
+
+
+
+#downloading N pictures with the keyword inputed
+def downUnsplash(keyword, num):
+    num = int(num)
+    url = "https://unsplash.com/napi/search?query=" + keyword + "&per_page="+ num + "&xp=search-multi-word%3A"
+    r = requests.get(url)
+
+    data = r.json()
+    for item in data['photos']['results']:
+        name = item['id']
+        urls = item['urls']['regular']
+        with open('media/'+ name +'.jpg','wb') as f:
+            f.write(requests.get(urls).content)

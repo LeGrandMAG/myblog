@@ -9,8 +9,9 @@ Mag's world | A dive into the life of a Congolese lost in South Korea
     <h1> Bienvenudo into my World</h1>
     <form method="post" action="">
         {% csrf_token %}
-        <input id="search" name="search" placeholder="Type your search here"> </input>
+        <input id="search" name="search" placeholder="Type your search here"/>
+        <input type="number" name="num" id="num" min="0"/>
+        <input type="submit" name="submit" value="submit" id="submit"/>
     </form>
-    {{search}}
        
 {% endblock %}

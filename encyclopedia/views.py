@@ -7,47 +7,32 @@ from markdown2 import Markdown
 from .models import Post 
 import requests 
 from deep_translator import PapagoTranslator
-from . import classHour as cl
 
 client = 'LXt8cXRom35yoCXW4Q_4'
 secret = 'kF7mI8sMgN'
 #Homepage
 def home(request):
-    
+    if(request.POST.get('search') and request.POST.get('num')):
+        keyword = request.POST.get('search')
+        num = request.POST.get('num')
+        logic.downUnsplash(keyword, num)
+    else:
+        print("fuck")
     txt =random.choice(logic.list_entries())
-    return render(request, "encyclopedia/home.html", {"random":txt.id, 'search': si })
+    return render(request, "encyclopedia/home.html", {"random":txt.id })
 
 def renders(request):
     txt =random.choice(logic.list_entries())
 
     if(request.POST.get('time')):
         time = request.POST.get('time')    
-        go = cl.classHour(time)
+        go = logic.classHour(time)
         return render(request, "encyclopedia/render.html", {"random":txt.id, "time":go})
 
     else:
         return render(request, "encyclopedia/render.html", {"random":txt.id})
 
 
-
-def unsplash(request):
-    if(request.POST.get('time')):
-
-        time = request.GET.get('search')    
-    if(si):
-        url = "https://unsplash.com/napi/search?query=" + si + "&per_page=3&xp=search-multi-word%3A"
-        r = requests.get(url)
-
-        data = r.json()
-
-
-    for item in data['photos']['results']:
-        name = item['id']
-        urls = item['urls']['regular']
-        with open(name +'.jpg','wb') as f:
-            f.write(requests.get(urls).content)
-    txt =random.choice(logic.list_entries())
-    return render(request, "encyclopedia/render.html", {"random":txt.id, "search":si})
 
 
 #Blog

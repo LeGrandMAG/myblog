@@ -3,8 +3,7 @@ import os
 from datetime import datetime, tzinfo 
 from zoneinfo import ZoneInfo
 from .models import Post
-
-
+import requests 
 
 #return the list of all the entry stored in the data base
 def list_entries():
@@ -97,3 +96,26 @@ def classHour(time):
         
         #return the time
         return e
+
+
+#downloading N pictures with the keyword inputed
+def downUnsplash(keyword, num):
+    url = "https://unsplash.com/napi/search?query=" + keyword + "&per_page="+num+"&xp=search-multi-word%3A"
+    r = requests.get(url)
+    print(url)
+    data = r.json()
+
+    for item in data['photos']['results']:
+        print(item['created_at'][:10])
+        name = item['created_at'][:10]
+        urls = item['urls']['regular']
+
+        #create the appropriate directory
+        try:
+            os.mkdir("live-static/media-root/"+keyword)
+            print(f"directory {keyword} succesfully created")
+        except FileExistsError:
+            print("this directory already exist")
+        with open("live-static/media-root/"+keyword+"/"+name+'.jpg','wb') as f:
+            f.write(requests.get(urls).content)
+        print(f"{num} pictures about {keyword} were downloaded succesfully")
